@@ -7,31 +7,24 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
 
-class HomeDatasource: Datasource {
+class HomeDatasource: Datasource, JSONDecodable {
     
-    let users: [User] = {
-        let jeffUser = User(name: "Jeff", username: "@usernameTest", bioText: "bioText test text asdf asd asdflkjlkjlsd ghstgw dfgdfgsfgewg rgergwerg ergergerg asdag afgadfgadfgafgafgadfgadfgdafg adfgdfgdafgsdfg dafggsdfgfdsdfgsfdgsd dfgsdgdfgsdfgsd adfgsdfgsdfgsdfgdfg sadfgsdfgdsfg sdfgdsfgsfg zz", profileImage: #imageLiteral(resourceName: "kralPhoto"))
-        
-        let rayUser = User(name: "Ray Wenderlich", username: "@rwenderlich", bioText: "We make iOS apps and other random things  asgergqerg3 egqergqergr aergqergqergr hwergergq", profileImage: #imageLiteral(resourceName: "rsz_1rsz_twitter_logo"))
-        
-        
-        return [jeffUser, rayUser]
-    }()
+    let users: [User]
+    let tweets: [Tweet]
     
-    let tweets: [Tweet] = {
+    required init(json: JSON) throws {
         
-        let jeffUser = User(name: "Jeff", username: "@usernameTest", bioText: "bioText test text asdf asd asdflkjlkjlsd ghstgw dfgdfgsfgewg rgergwerg ergergerg asdag afgadfgadfgafgafgadfgadfgdafg adfgdfgdafgsdfg dafggsdfgfdsdfgsfdgsd dfgsdgdfgsdfgsd adfgsdfgsdfgsdfgdfg sadfgsdfgdsfg sdfgdsfgsfg zz", profileImage: #imageLiteral(resourceName: "kralPhoto"))
+        let userJsonArray = json["users"].array
+        self.users = userJsonArray!.map{User(json: $0)}
         
-        let tweet = Tweet(user: jeffUser, message: "This is supposed to be a really really long tweet in order to fill out the textview space. I think I might need to type some more though because I don't think it is long enough")
+        let tweetsJsonArray = json["tweets"].array
+        self.tweets = tweetsJsonArray!.map{Tweet(json: $0)}
         
-        let tweet2 = Tweet(user: jeffUser, message: "This is text for the second tweet message. I hope I can figure out something to say. How about hmmmmmmmmmm")
-        
-        return [tweet, tweet2]
-    }()
-    
-    
+    }
     
     override func footerClasses() -> [DatasourceCell.Type]? {
         return [UserFooter.self]

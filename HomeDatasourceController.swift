@@ -24,38 +24,10 @@ class HomeDatasourceController: DatasourceController {
         
         setupNavigationBarItems()
         
-//        let homeDatasource = HomeDatasource()
-//        self.datasource = homeDatasource
-        
-        fetchHomeFeed()
-    }
-    
-    let tron = TRON(baseURL: "https://api.letsbuildthatapp.com")
-    
-    class Home: JSONDecodable {
-        
-        required init(json: JSON) throws {
-            print("ready to parse \n", json)
+        Service.sharedInstance.fetchHomeFeed { (homeDatasource) in            
+            self.datasource = homeDatasource
         }
-    }
-    
-    class JSONError: JSONDecodable {
         
-        required init(json: JSON) {
-            print("json error")
-        }
-    }
-    
-    fileprivate func fetchHomeFeed() {
-        
-        let request: APIRequest<Home, JSONError> = tron.request("/twitter/home")
-        
-        request.perform(withSuccess: { (home) in
-            print("great success")
-        }) { (err) in
-            print("failed to fetch", err)
-        }
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

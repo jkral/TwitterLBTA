@@ -20,6 +20,7 @@
 		C5948AD91E2548870009F2EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5948AD71E2548870009F2EB /* LaunchScreen.storyboard */; };
 		C5948AE11E254AD40009F2EB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5948AE01E254AD40009F2EB /* HomeController.swift */; };
 		C5D61FD81E4B897E0013BEFE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61FD71E4B897E0013BEFE /* Tweet.swift */; };
+		C5D61FE31E524A140013BEFE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D61FE21E524A140013BEFE /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C5D61FDB1E4E17950013BEFE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/TwitterLBTA-evdllvtlfwsrrvfhwpbfuxlscglw/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		C5D61FDD1E4E179A0013BEFE /* LBTAComponents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LBTAComponents.framework; path = "../../Library/Developer/Xcode/DerivedData/TwitterLBTA-evdllvtlfwsrrvfhwpbfuxlscglw/Build/Products/Debug-iphonesimulator/LBTAComponents/LBTAComponents.framework"; sourceTree = "<group>"; };
 		C5D61FDF1E4E17A20013BEFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/TwitterLBTA-evdllvtlfwsrrvfhwpbfuxlscglw/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		C5D61FE21E524A140013BEFE /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E9768216D25225745BD604CD /* Pods_TwitterLBTA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterLBTA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5C2566F8C763CAC849584DC /* Pods-TwitterLBTA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterLBTA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterLBTA/Pods-TwitterLBTA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 		C5948AC21E2548860009F2EB = {
 			isa = PBXGroup;
 			children = (
+				C5D61FE11E5249EF0013BEFE /* Service */,
 				C5948ACD1E2548870009F2EB /* TwitterLBTA */,
 				C5948ACC1E2548870009F2EB /* Products */,
 				B2367B706DD26EA7ACAED6A2 /* Pods */,
@@ -139,6 +142,14 @@
 				C5948ADA1E2548870009F2EB /* Info.plist */,
 			);
 			path = TwitterLBTA;
+			sourceTree = "<group>";
+		};
+		C5D61FE11E5249EF0013BEFE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C5D61FE21E524A140013BEFE /* Service.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 				C54988F71E25887700E34EBE /* UserHeaderFooterCells.swift in Sources */,
 				C54988F21E256F7C00E34EBE /* HomeDatasourceController.swift in Sources */,
 				C514AD331E315B9000DC5524 /* HomeDatasourceController+navbar.swift in Sources */,
+				C5D61FE31E524A140013BEFE /* Service.swift in Sources */,
 				C5948AE11E254AD40009F2EB /* HomeController.swift in Sources */,
 				C54988FF1E2697E400E34EBE /* UserCell.swift in Sources */,
 			);
